@@ -17,9 +17,12 @@ export default function Card() {
     const angleY = (x - midCardWidth) / 8;
     const angleX = -(y - midCardHeight) / 8;
 
+    const shadowX = (x - midCardWidth) / 5;
+    const shadowY = (y - midCardHeight) / 5;
+
     el.children[0].setAttribute(
       "style",
-      `transform: rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.05); transition: transform 0.1s ease;`
+      `transform: rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.05); transition: transform 0.1s ease; box-shadow: ${-shadowX}px ${-shadowY}px 30px rgba(0, 0, 0, 0.25)`
     );
 
     const holo = el.querySelector(`.${styles.holoLayer}`) as HTMLElement;
@@ -44,9 +47,12 @@ export default function Card() {
     const angleY = (x - midX) / 8;
     const angleX = -(y - midY) / 8;
 
+    const shadowX = (x - midX) / 5;
+    const shadowY = (y - midY) / 5;
+
     el.children[0].setAttribute(
       "style",
-      `transform: rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.05); transition: transform 0.1s ease;`
+      `transform: rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.05); transition: transform 0.1s ease; box-shadow: ${-shadowX}px ${-shadowY}px 30px rgba(0, 0, 0, 0.25)`
     );
 
     const holo = el.querySelector(`.${styles.holoLayer}`) as HTMLElement;
@@ -61,7 +67,7 @@ export default function Card() {
     const el = event.currentTarget;
     el.children[0].setAttribute(
       "style",
-      "transform: rotateX(0deg) rotateY(0deg) scale(1); transition: transform 0.3s ease;"
+      "transform: rotateX(0deg) rotateY(0deg) scale(1); transition: transform 0.3s ease; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1)"
     );
     const holo = el.querySelector(`.${styles.holoLayer}`) as HTMLElement;
     if (holo) {
@@ -73,7 +79,7 @@ export default function Card() {
     const el = event.currentTarget;
     el.children[0].setAttribute(
       "style",
-      "transform: rotateX(0deg) rotateY(0deg) scale(1); transition: transform 0.3s ease;"
+      "transform: rotateX(0deg) rotateY(0deg) scale(1); transition: transform 0.3s ease; box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1)"
     );
 
     const holo = el.querySelector(`.${styles.holoLayer}`) as HTMLElement;
